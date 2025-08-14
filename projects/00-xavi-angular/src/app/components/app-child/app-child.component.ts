@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child', // Define el nombre de la etiqueta HTML para usar este componente, como `<app-child>`.
@@ -17,6 +17,9 @@ export class AppChildComponent {
     // 'eventoPersonalizado' es el nombre de nuestro evento.
     // 'new EventEmitter<string>()' crea una instancia de EventEmitter que puede enviar datos de tipo 'string'.
     @Output() eventoPersonalizado = new EventEmitter<string>();
+
+    // Se puede usar 'output' en lugar de 'EventEmitter' si se prefiere, pero 'EventEmitter' es más común en Angular.
+    // eventoPersonalizado = output<any>();
 
     // Este método se llama desde el evento '(click)' del botón en el archivo HTML.
     notificarPadre(): void {
