@@ -5,6 +5,12 @@
     h1 { 
         margin: 0;
     }
+
+    .mensajeBlock {
+        padding: 0.25em;
+        border: 1px solid lightseagreen;
+        margin-bottom: 1em;
+    }
     .cardDeck {
         display: flex;
         flex-direction: row;

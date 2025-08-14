@@ -1,9 +1,26 @@
 <div class="componenteChild">
     <h4>componente child</h4>
 
+    <!-- Recibir datos del padre --> 
     @if (msg) {
         <p>Recibiendo datos del padre: {{msg}}</p>
     } @else {
         <small>no llegan datos del padre</small>
+    }
+
+    <!-- Evento para el padre --> 
+    @if (hasButton) {
+        <p>Este boton envia datos al padre con un evento personnalizado</p>
+    <!--
+          El evento '(click)' es un "escuchador de eventos" de Angular.
+          Cuando el usuario hace clic en este botón, Angular llama
+          automáticamente al método 'notificarPadre()'.
+
+          Este método, definido en la clase TypeScript del componente hijo,
+          utiliza un 'EventEmitter' para 'emitir' un evento personalizado.
+          El componente padre, al estar escuchando, puede capturar este
+          evento y reaccionar a él, por ejemplo, mostrando los datos enviados.
+    -->
+        <button (click)="notificarPadre()">Enviar datos al Padre</button>
     }
 </div>

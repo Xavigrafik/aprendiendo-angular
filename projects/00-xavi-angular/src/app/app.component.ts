@@ -49,6 +49,14 @@ export class AppComponent implements OnInit {
         this.number = 0;
     }
 
+    // 1. Variable para almacenar el mensaje del hijo
+    mensajeDelHijo:string = '';
+    // 2. Método para manejar el evento del hijo y recibir los datos
+    manejarEvento(mensaje: string): void {
+        this.mensajeDelHijo = mensaje;
+        console.log('Mensaje recibido:', mensaje);
+    }
+
     
     ngOnInit(): void {
         console.log('ngOnInit');

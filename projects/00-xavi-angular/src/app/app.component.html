@@ -25,6 +25,14 @@
         [] : data-binding del js al html
     </p>
     <hr>
+     <div class="mensajeBlock">
+        @if (mensajeDelHijo) {
+            <h4 style="color: green;">Mensaje del hijo: {{mensajeDelHijo}}</h4>
+        } @else {
+            <h3 style="color: red;">No hay mensaje del hijo</h3>
+        }
+    </div>
+    <hr>
 
     <p>addOne: {{number}}</p>
     <button (click)="addOne()">Add {{number}}</button>
@@ -32,9 +40,11 @@
 
     <hr>
 
-    <app-child msg="Info desd el padre"></app-child>
+    <app-child msg="Prop desde el padre"></app-child>
     <app-child [msg]="variableCustom"></app-child>
-    <app-child></app-child>
+   
+    <!-- recibe el evento custom -->
+    <app-child [hasButton]="true" (eventoPersonalizado)="manejarEvento($event)"></app-child>
 
     <hr>
 
@@ -49,18 +59,18 @@
 
 
     <hr>
-@if (animals) {
-    <p>data json: </p>
-    <div class="cardDeck">
-        @for (animal of animals; track animal.id) {
-            <div class="cardAnimal">
-                <img src="{{animal.img}}" alt="aa" width="100px">
+    @if (animals) {
+        <p>data json: </p>
+        <div class="cardDeck">
+            @for (animal of animals; track animal.id) {
+                <div class="cardAnimal">
+                    <img src="{{animal.img}}" alt="aa" width="100px">
 
-                <p class="cardInfo">{{animal.name}}</p>
-            </div>
-        }
-    </div>
-}
+                    <p class="cardInfo">{{animal.name}}</p>
+                </div>
+            }
+        </div>
+    }
 
 
 
