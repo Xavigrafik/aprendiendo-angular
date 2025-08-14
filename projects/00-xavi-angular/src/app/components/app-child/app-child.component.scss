@@ -1,5 +1,14 @@
-    .componenteChild {
-        border:1px solid red;
+$pepe : dodgerblue;
+
+.componenteChild {
+        border:2px solid $pepe;
+        border-radius: 4px;
         padding: 1em;
-        background-color: rgba(178, 179, 180, 0.33);
+        background-color: rgba(69, 204, 245, 0.33);
+        margin-bottom: 0.5em;
+
+
+        & > * {
+            margin: 0;
+        }
     }

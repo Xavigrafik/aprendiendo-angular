@@ -1,13 +1,59 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { AppChildComponent } from './components/app-child/app-child.component';
+import { FormsModule } from '@angular/forms';
+
+interface Animal {
+  id: number;
+  name: string;
+  img: string;
+}
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppChildComponent],
+  imports: [AppChildComponent, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = '00-xavi-angular';
+export class AppComponent implements OnInit {
+    title: string = '00-xavi-angular';
+    variableCustom: string = 'Esta es mi variableCustom desde el padre';
+    isTrue: boolean = true;
+
+    number: number = 0;
+
+    items: string[] = ['item1', 'item2', 'item3'];
+
+    // Array para guardar los datos de los animales
+    animals: Animal[] = [
+        {
+            "id": 1,
+            "name": "León",
+            "img": "https://placedog.net/100/100"
+        },
+        {
+            "id": 2,
+            "name": "Tigre",
+            "img": "https://placedog.net/100/100"
+        },
+        {
+            "id": 3,
+            "name": "Elefante",
+            "img": "https://placedog.net/100/100"
+        }
+    ];
+
+    addOne() {
+        this.number++;
+    }
+    resetNum() {
+        this.number = 0;
+    }
+
+    
+    ngOnInit(): void {
+        console.log('ngOnInit');
+        
+    }
+
+    constructor() {}
 }

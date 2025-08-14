@@ -1,3 +1,9 @@
 <div class="componenteChild">
     <h4>componente child</h4>
+
+    @if (msg) {
+        <p>Recibiendo datos del padre: {{msg}}</p>
+    } @else {
+        <small>no llegan datos del padre</small>
+    }
 </div>

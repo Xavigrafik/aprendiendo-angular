@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "León",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/1200px-Lion_waiting_in_Namibia.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Tigre",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Panthera_tigris_tigris%2C_male_in_Kanha_Tiger_Reserve.jpg/1200px-Panthera_tigris_tigris%2C_male_in_Kanha_Tiger_Reserve.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Elefante",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Mighty_trunk.jpg/1200px-Mighty_trunk.jpg"
+  }
+]

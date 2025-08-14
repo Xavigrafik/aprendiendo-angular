@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './app-child.component.scss'
 })
 export class AppChildComponent {
+
+    @Input()
+    msg: string = "";
 
 }
