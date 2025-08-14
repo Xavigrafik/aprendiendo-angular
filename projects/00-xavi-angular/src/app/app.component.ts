@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppChildComponent } from './components/app-child/app-child.component';
 import { FormsModule } from '@angular/forms';
+import Product from './models/Product';
 
 interface Animal {
   id: number;
@@ -15,13 +16,15 @@ interface Animal {
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-    title: string = '00-xavi-angular';
-    variableCustom: string = 'Esta es mi variableCustom desde el padre';
-    isTrue: boolean = true;
 
-    number: number = 0;
-
+    // Definición de tipados
+    title: string;
+    variableCustom: string;
+    isTrue: boolean;
+    number: number;
     items: string[] = ['item1', 'item2', 'item3'];
+    objectExample:Product
+
 
     // Array para guardar los datos de los animales
     animals: Animal[] = [
@@ -63,5 +66,17 @@ export class AppComponent implements OnInit {
         
     }
 
-    constructor() {}
+    constructor() {
+        // Inicializa las variables del componente, Se pueden delcarar en el constructor o en ngOnInit
+        this.title = '00-xavi-angular';
+        this.variableCustom = 'Esta es mi variableCustom desde el padre';
+        this.isTrue = true;
+        this.number = 0;
+        this.objectExample = {
+            id: 1,
+            price: 100,
+            isForSale: true,
+            items: ['item1', 'item2', 'item3'],
+        }
+    }
 }
