@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { AppChildComponent } from './components/app-child/app-child.component';
-import { FormsModule } from '@angular/forms';
-import Product from './models/Product';
+import { FormComponent } from './components/form/form.component';
+import IProduct from './models/Product';
 
 interface Animal {
   id: number;
@@ -11,7 +13,7 @@ interface Animal {
 
 @Component({
   selector: 'app-root',
-  imports: [AppChildComponent, FormsModule],
+  imports: [AppChildComponent, FormsModule,FormComponent, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -22,8 +24,8 @@ export class AppComponent implements OnInit {
     variableCustom: string;
     isTrue: boolean;
     number: number;
-    items: string[] = ['item1', 'item2', 'item3'];
-    objectExample:Product
+    arrayExample: string[];
+    objExample: IProduct;
 
 
     // Array para guardar los datos de los animales
@@ -52,6 +54,10 @@ export class AppComponent implements OnInit {
         this.number = 0;
     }
 
+    toggleBoolean() {
+        this.isTrue = !this.isTrue
+    }
+
     // 1. Variable para almacenar el mensaje del hijo
     mensajeDelHijo:string = '';
     // 2. Método para manejar el evento del hijo y recibir los datos
@@ -72,11 +78,13 @@ export class AppComponent implements OnInit {
         this.variableCustom = 'Esta es mi variableCustom desde el padre';
         this.isTrue = true;
         this.number = 0;
-        this.objectExample = {
+        this.arrayExample = ['item1', 'item2', 'item3'];
+        this.objExample = {
             id: 1,
             price: 100,
+            name: "comp",
             isForSale: true,
-            items: ['item1', 'item2', 'item3'],
+            // items: ['objExample_item1', 'objExample_item2', 'objExample_item3'],
         }
     }
 }

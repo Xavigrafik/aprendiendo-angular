@@ -1,0 +1,43 @@
+<div class="myForm">
+
+    
+    <h1>My Form</h1>
+    
+    <form [formGroup]="movieForm" (submit)="handleSubmit()">
+        
+        <fieldset>
+            <label for="movie-name">Name</label>
+            <input type="text" id="movie-name" formControlName="name">
+            {{(name.invalid && name.touched) ? "Name is required" : "" }}
+        </fieldset>
+        
+        <fieldset>
+            <label for="movie-duration">Duration</label>
+            <input type="text" id="movie-duration" formControlName="duration">
+            @if (duration.invalid && (duration.dirty || duration.touched)) {
+                <div class="error-messages" style="color:red">
+                    @if (duration.hasError('required')) {
+                        <span>Duration is required.</span>
+                    }
+                    @if (duration.hasError('max')) {
+                        <span>Duration is too much.</span>
+                    }
+                    @if (duration.hasError('pattern')) {
+                        <span>Solo números, bro!</span>
+                    }
+                    @if (duration.hasError('min')) {
+                        <span>Duration is too little.</span>
+                    }
+                </div>
+            }
+        </fieldset>
+
+        <fieldset>
+            <label for="movie-director">Director</label>
+            <input type="text" id="movie-director" formControlName="director">
+        </fieldset>
+        
+        <button [disabled]="movieForm.invalid" type="submit">Create movie</button>
+        
+    </form>
+</div>

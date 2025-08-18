@@ -37,6 +37,7 @@
     <p>addOne: {{number}}</p>
     <button (click)="addOne()">Add {{number}}</button>
     <button (click)="resetNum()">Reset</button>
+    <button (click)="toggleBoolean()">Toggle Boolean</button>
 
     <hr>
 
@@ -48,10 +49,10 @@
 
     <hr>
 
-    @if (items) {
-        <p>Array :</p>
+    @if (arrayExample) {
+        <p>arrayExample :</p>
         <ul>
-            @for (item of items; track item) {
+            @for (item of arrayExample; track item) {
                 <li>i:{{$index}}, item: {{item}}</li>
             }
         </ul>
@@ -71,6 +72,11 @@
             }
         </div>
     }
+
+    <hr>
+    <h2 [ngClass]="{dark:isTrue, big:false}">NgClass clases dinámicas {{isTrue}}</h2>
+
+    <my-form></my-form>
 
 
 

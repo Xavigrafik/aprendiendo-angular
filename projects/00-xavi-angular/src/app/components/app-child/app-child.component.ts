@@ -1,3 +1,4 @@
+import { ProductService } from './../../services/product.service';
 import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
 @Component({
@@ -30,6 +31,10 @@ export class AppChildComponent {
         
         // El método '.emit()' dispara el evento, enviando el 'mensaje' al componente padre.
         this.eventoPersonalizado.emit(mensaje);
+    }
+
+    constructor(public productService: ProductService) {
+        
     }
     
 }

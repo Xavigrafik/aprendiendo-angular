@@ -22,5 +22,9 @@
           evento y reaccionar a él, por ejemplo, mostrando los datos enviados.
     -->
         <button (click)="notificarPadre()">Enviar datos al Padre</button>
+        <button (click)="productService.setProductName('CAMBIADO desde product.service')">Cambiar nombre desde servicio</button>
     }
+    
+    <p>{{productService.product.name}}</p>
+
 </div>
