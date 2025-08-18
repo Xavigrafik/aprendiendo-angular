@@ -1,0 +1,23 @@
+:root {
+  /* Espaciado */
+  --space-unit: 0.5rem;
+  --space-xs: calc(var(--space-unit) * 1);
+  --space-s: calc(var(--space-unit) * 2);
+  --space-m: calc(var(--space-unit) * 4);
+  --space-l: calc(var(--space-unit) * 8);
+
+  /* Tipografía */
+  --font-size-s: 0.8rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.25rem;
+  --font-size-xl: 1.5rem;
+
+  /* Colores del tema */
+  --color-primary: #0d6efd;
+  --color-secondary: #6c757d;
+  --color-text: #212529;
+  --color-background: #fff;
+  
+  /* Sombras */
+  --shadow-small: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
