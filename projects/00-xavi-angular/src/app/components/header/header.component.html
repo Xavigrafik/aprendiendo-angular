@@ -1,8 +1,18 @@
 <nav>
     <ul class="nav-links">
-        <li><a class="nav-link" routerLink="/">Home</a></li>
-        <li><a class="nav-link" routerLink="/cajon">Cajón</a></li>
-        <li><a class="nav-link" routerLink="/movies">Movies</a></li>
-        <li><a class="nav-link" routerLink="/form">Form</a></li>
+        <!-- routerLinkActive="active" añadirá la clase 'active' a este <li>
+             cuando la ruta actual sea exactamente '/'. -->
+        <li >
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/cajon">Cajón</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/movies">Movies</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/form">Form</a>
+        </li>
     </ul>
 </nav>

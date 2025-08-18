@@ -1,11 +1,13 @@
-<p>movie-list works!</p>
 
-
-<ul>
-
+<h4>Movie list</h4>
+<div class="movieDeck">
     @for (movie of movieservice.movies; track $index) {
-        <li>{{movie.name}}</li>
+        <a [routerLink]="movie.name">
+            <div class="movieCard">
+                <p>{{ movie.name }}</p>
+                <p>{{ movie.duration }}</p>
+                <p>{{ movie.director }}</p>
+            </div>
+        </a>
     }
-
-
-</ul>
+</div>

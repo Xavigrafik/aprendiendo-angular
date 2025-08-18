@@ -1,0 +1,11 @@
+
+<div class="movieSearchResult">
+
+    @if (selectedMovie) {
+        <h4>{{selectedMovie.name}}</h4>
+        {{selectedMovie.duration}} <br>
+        {{selectedMovie.director}}
+    } @else {
+        <p>No se han encontrado peliculas</p>
+    }
+</div>

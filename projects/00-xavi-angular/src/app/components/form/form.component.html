@@ -1,18 +1,21 @@
 <div class="myForm">
 
     <form [formGroup]="movieForm" (submit)="handleSubmit()">
-        
+
+        <h5>Introduce datos</h5> <br>
+
         <fieldset>
             <label for="movie-name">Name</label>
             <input type="text" id="movie-name" formControlName="name">
-            {{(name.invalid && name.touched) ? "Name is required" : "" }}
+            <div class="error-messages">
+                {{(name.invalid && name.touched) ? "Name is required" : "" }}
+            </div>
         </fieldset>
         
         <fieldset>
             <label for="movie-duration">Duration</label>
             <input type="text" id="movie-duration" formControlName="duration">
-            @if (duration.invalid && (duration.dirty || duration.touched)) {
-                <div class="error-messages" style="color:red">
+                <div class="error-messages">
                     @if (duration.hasError('required')) {
                         <span>Duration is required.</span>
                     }
@@ -26,12 +29,12 @@
                         <span>Duration is too little.</span>
                     }
                 </div>
-            }
         </fieldset>
 
         <fieldset>
             <label for="movie-director">Director</label>
             <input type="text" id="movie-director" formControlName="director">
+            <div class="error-messages"></div>
         </fieldset>
         
         <button [disabled]="movieForm.invalid" type="submit">Create movie</button>

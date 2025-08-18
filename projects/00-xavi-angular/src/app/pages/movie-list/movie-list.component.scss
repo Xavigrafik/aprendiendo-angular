@@ -1,0 +1,13 @@
+.movieDeck{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+    .movieCard{
+        min-width: 150px;
+        border:1px solid #c2c3c4;
+        background-color: #f2f3f4;
+        padding: 1em;
+        border-radius: 5px;
+    }
+}
