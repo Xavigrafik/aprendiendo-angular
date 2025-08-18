@@ -1,0 +1,40 @@
+.componenteApp{
+    border:1px solid lightseagreen;
+    padding: 1em;
+    background-color: rgba(69, 204, 245, 0.25);
+    h1 { 
+        margin: 0;
+    }
+
+    .mensajeBlock {
+        padding: 1rem;
+        border: 1px solid lightseagreen;
+        margin-bottom: 1em;
+    }
+    .cardDeck {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .cardAnimal{
+            display: flex;
+            border:1px solid blue;
+            border-radius: 5px;
+            overflow: hidden;
+            flex-direction: column;
+
+            .cardInfo {
+                padding: 1em;
+                margin: 0;
+            }
+        }
+    }
+
+    .dark {
+        background-color: #111;
+        color: #fff;
+    }
+
+}
