@@ -17,7 +17,7 @@ export class ProductService {
       // Inicializa la propiedad 'product' con un objeto que cumple con la interfaz 'IProduct'.
       this.product = {
           id: 1,
-          name: "Nombre producto",
+          name: "Nombre producto (product.service) ",
           price: 1000,
           isForSale: true,
       }

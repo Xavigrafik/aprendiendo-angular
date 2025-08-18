@@ -1,3 +1,4 @@
+import { MovieService } from './../../services/movie.service';
 import { Component } from '@angular/core';
 // Importa las clases necesarias para crear formularios reactivos.
 // 'FormControl' gestiona un campo de formulario individual.
@@ -26,7 +27,7 @@ export class FormComponent {
   director: FormControl;
 
   // El constructor es el lugar donde se inicializan las propiedades del componente.
-  constructor() {
+  constructor(public movieservice:MovieService) {
     // Inicializa cada 'FormControl' con un valor inicial, en este caso, una cadena vacía.
     this.name = new FormControl('', Validators.required);
     this.duration = new FormControl('', [
@@ -49,7 +50,8 @@ export class FormComponent {
     
 
     handleSubmit(): void {
-        this.movieForm.reset()
-        console.log('handleSubmit:', this.movieForm.value);
+        // console.log('handleSubmit:', this.movieForm.value);
+        this.movieservice.addMovie(this.movieForm.value)
+        this.movieForm.reset();
     }
 }

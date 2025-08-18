@@ -1,1 +1,11 @@
 <p>movie-list works!</p>
+
+
+<ul>
+
+    @for (movie of movieservice.movies; track $index) {
+        <li>{{movie.name}}</li>
+    }
+
+
+</ul>
