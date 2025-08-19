@@ -9,9 +9,6 @@ import { RouterOutlet } from '@angular/router';
 @Component({
     selector: 'my-form',
     standalone: true,
-    // CORRECCIÓN: Se importa el módulo 'ReactiveFormsModule'.
-    // Este módulo es el que proporciona las directivas necesarias para usar [formGroup] y formControlName en el HTML.
-    // Las clases 'FormGroup' y 'FormControl' se importan solo para la lógica de TypeScript, no para este array.
     imports: [ReactiveFormsModule],
     templateUrl: './form.component.html',
     styleUrl: './form.component.scss',

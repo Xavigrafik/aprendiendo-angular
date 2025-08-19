@@ -1,0 +1,27 @@
+    .userForm {
+        display: block;
+        margin: 1em;
+        border:1px solid #ccc;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    form {
+        padding: 1em;
+        background-color: #fff;
+        width: 500px;
+
+        
+        input{
+            margin-bottom: 1.5em;
+            .ng-invalid.ng-touched {
+                border: 2px solid #dc3545;
+            }
+        }
+
+        .error-messages {
+            color: #dc3545;
+            margin-top: .25rem;
+            min-height: 1.5em;
+            font-size: .875em;
+        }
+    }
