@@ -1,0 +1,10 @@
+<div class="usersDeck">
+    @for (user of userService.users; track user.id) {
+        <div class="userCard">
+            <img src="https://placedog.net/50/50" class="img-fluid" />
+            <h6>{{ user.name }} <small>({{ user.username }})</small></h6>
+            <p class="email">{{ user.email }}</p>
+            <button [routerLink]="['/users', user.id]">Ver</button>
+        </div>
+    }
+</div>

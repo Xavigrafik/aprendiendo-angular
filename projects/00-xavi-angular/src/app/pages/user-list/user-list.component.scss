@@ -1,0 +1,20 @@
+.usersDeck {
+    display: grid;
+    justify-content: flex-start;
+    gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+    padding: 1em;
+
+    .userCard {
+        border:1px solid #c2c3c4;
+        background-color: #f2f3f4;
+        padding: 1em;
+        border-radius: 5px;
+        .email {
+            color:#727374;
+        }
+        button {
+            margin-top: 1em;
+        }
+    }
+}

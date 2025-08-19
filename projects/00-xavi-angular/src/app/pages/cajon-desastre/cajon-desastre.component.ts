@@ -16,7 +16,7 @@ interface Animal {
 
 @Component({
   selector: 'app-cajon-desastre',
-    imports: [AppChildComponent, FormsModule, FormComponent, NgClass, RouterOutlet],
+    imports: [AppChildComponent, FormsModule, FormComponent, NgClass],
   templateUrl: './cajon-desastre.component.html',
   styleUrl: './cajon-desastre.component.scss'
 })

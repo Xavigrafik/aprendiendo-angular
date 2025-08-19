@@ -1,0 +1,29 @@
+@if (selectedUser) {
+
+    <div class="userContainer">
+        <div class="userCard">
+
+            <img src="https://placedog.net/50/50" class="userImage" />
+            <h6>{{ selectedUser.name }} <small>({{ selectedUser.username }})</small></h6>
+
+            <p class="email">{{ selectedUser.email }}</p>
+            <p>{{ selectedUser.phone }}</p>
+            <p>{{ selectedUser.website }}</p>
+
+            <div class="address">
+                <p>{{ selectedUser.address.street }}</p>
+                <p>{{ selectedUser.address.suite }}</p>
+                <p>{{ selectedUser.address.city }}</p>
+                <p>{{ selectedUser.address.zipcode }}</p>
+                <p>{{ selectedUser.address.geo.lat }}</p>
+                <p>{{ selectedUser.address.geo.lng }}</p>
+            </div>
+
+            <p>{{ selectedUser.company.name }}</p>
+            <p>{{ selectedUser.company.catchPhrase }}</p>
+            <p>{{ selectedUser.company.bs }}</p>
+        </div>
+
+        <button [routerLink]="['/users']">Go back</button>
+    </div>
+}
