@@ -14,25 +14,34 @@ export class FormUserComponent {
     id: FormControl;
     name: FormControl;
     email: FormControl;
-    address	: FormControl;
+
+    addressForm: FormGroup;
+    city: FormControl;
+    street: FormControl;
+    
 
     constructor(public userService:UserService ) {
         
         this.id = new FormControl('');
         this.name = new FormControl('');
         this.email = new FormControl('');
-        this.address = new FormControl('');
-
+        
         this.userForm = new FormGroup({
             id: this.id,
             name: this.name,
             email: this.email,
-            address: this.address,
+        });
+
+        this.city = new FormControl('');
+        this.street = new FormControl('');
+        this.addressForm = new FormGroup({
+            city: this.city,
+            street: this.street,
         });
     }
     
-    handleSubmit() {
-        console.log('FormUserComponent submit');
+    postUser() {
+        console.log('FormUserComponent submit', this.userForm.value, this.addressForm.value);
     }
 
 }

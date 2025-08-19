@@ -23,8 +23,6 @@ export class UserService {
         return this.http.get<any[]>(`${this.API_URL}/${id}`)
     }
     
-    postUser(user:any) {
-        return this.http.post(this.API_URL, "????????")
-    }
+
 
 }
