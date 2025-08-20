@@ -9,13 +9,19 @@
             <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/cajon">Cajón</a>
         </li>
         <li>
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/movies">Movies</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/movies">
+                Movies
+                <div class="badge">{{getTotalMovies()}}</div>
+            </a>
         </li>
         <li>
             <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/form">Forms</a>
         </li>
         <li>
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/users">Users</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/users">
+                Users 
+                <div class="badge">{{getTotalUsers()}}</div>
+            </a>
         </li>
     </ul>
 </nav>

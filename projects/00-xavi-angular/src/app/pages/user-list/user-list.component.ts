@@ -25,16 +25,6 @@ export class UserListComponent implements OnInit {
             error: (error) => {
                 if (error.status == 429 ) {
                     console.log('Tas queado SIN REQUESTS... desde user-list.component', error);
-                    this.userService.users = [{
-                        "id": 1,
-                        "name": "USUARIO DEFAULT",
-                        "username": "error 429",
-                        "email": "Sincere@april.biz",
-                        "address": {
-                            "street": "Kulas Light",
-                            "city": "Gwenborough",
-                        },
-                    }];
                 } else {
                     console.log('error desde user-list.component', error);
                 }

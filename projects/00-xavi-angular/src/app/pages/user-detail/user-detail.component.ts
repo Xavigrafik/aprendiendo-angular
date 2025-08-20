@@ -29,17 +29,6 @@ export class UserDetailComponent {
             },
             error: (error) => {
                 console.log("error desde user-detail.component", error);
-                this.selectedUser = {
-                        "id": 1,
-                        "name": "USUARIO DEFAULT",
-                        "username": "error 429",
-                        "email": "Sincere@april.biz",
-                        "address": {
-                            "street": "Kulas Light",
-                            "city": "Gwenborough",
-                        },
-                    };
-                
             },
             
         })

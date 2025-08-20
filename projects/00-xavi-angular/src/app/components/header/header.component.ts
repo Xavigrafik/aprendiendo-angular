@@ -1,3 +1,5 @@
+import { MovieService } from './../../services/movie.service';
+import { UserService } from './../../services/user.service';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -9,5 +11,15 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+    constructor(public userService:UserService, public movieService: MovieService) {
+        
+    }
 
+
+    getTotalMovies() {
+        return this.movieService.getTotalMovies();
+    }
+    getTotalUsers() {
+        return this.userService.getTotalUsers();
+    }
 }

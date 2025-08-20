@@ -32,5 +32,9 @@ export class MovieService {
     getMovie(name:string):(IMovie | undefined){
         return this.movies.find((movie) => movie.name === name);
     }
+
+    getTotalMovies() {
+        return this.movies.length;
+    }
     
 }
