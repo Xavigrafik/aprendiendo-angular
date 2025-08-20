@@ -1,9 +1,9 @@
 <div class="userFormwrapper">
-    <form [formGroup]="userForm">
-        <h4 >Create new user</h4><br>
+    <form [formGroup]="userForm" (ngSubmit)="postUser()">
+        <h4>Create new user</h4><br>
 
-        <label for="userId">user Id</label>
-        <input type="text" id="userId" formControlName="id">
+        <label for="userId">user Id *</label>
+        <input type="text" id="userId" formControlName="id" readonly>
 
         <label for="userName">user name</label>
         <input type="text" id="userName" formControlName="name">
@@ -11,15 +11,24 @@
         <label for="userEmail">user email</label>
         <input type="text" id="userEmail" formControlName="email">
 
-
-    </form>
-    <form [formGroup]="addressForm">
+        <hr>
         
-        <label for="userCity">user city</label>
-        <input type="text" id="userCity" formControlName="city">
+        <!--
+            'formGroupName' agrupa los campos de la dirección.
+            Esto indica a Angular que estos campos pertenecen al 'FormGroup'
+            anidado llamado 'address' en tu clase TypeScript.
+        -->
+        <div formGroupName="address">
+            <h4>Address</h4><br>
+            <label for="userCity">user city</label>
+            <input type="text" id="userCity" formControlName="city">
+            
+            <label for="userstreet">user street</label>
+            <input type="text" id="userStreet" formControlName="street">
+        </div>
         
-        <label for="userstreet">user street</label>
-        <input type="text" id="userStreet" formControlName="street">
+        <!-- El botón ahora está dentro del formulario.
+             El tipo 'submit' hará que se dispare el evento 'ngSubmit' del formulario. -->
+        <button type="submit">Create user</button>
     </form>
-    <button (click)="postUser()" >Create user</button>
 </div>

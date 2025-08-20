@@ -8,23 +8,39 @@ import { CommonModule } from '@angular/common';
     imports: [CommonModule, RouterLink],
     standalone: true,
     templateUrl: './user-list.component.html',
-  styleUrl: './user-list.component.scss',
+    styleUrl: './user-list.component.scss',
 })
 export class UserListComponent implements OnInit {
-  constructor(public userService: UserService) {}
+    constructor(public userService: UserService) {}
 
-  ngOnInit(): void {
-    this.getUsers();
-  }
+    ngOnInit(): void {
+        this.getUsers();
+    }
 
-  getUsers() {
-    this.userService.getUsers().subscribe({
-      next: (data) => {
-        this.userService.users = data;
-      },
-      error: (error) => {
-        console.log('error desde user-list.component', error);
-      },
-    });
-  }
+    getUsers() {
+        this.userService.getUsers().subscribe({
+            next: (data) => {
+                this.userService.users = data;
+            },
+            error: (error) => {
+                if (error.status == 429 ) {
+                    console.log('Tas queado SIN REQUESTS... desde user-list.component', error);
+                } else {
+                    console.log('error desde user-list.component', error);
+                }
+            },
+        });
+    }
+
+    deleteUser(id: number) {
+        this.userService.deleteUser(id).subscribe({
+            next: (data) => {
+                console.log('data OK: ', data);
+                this.getUsers();
+            },
+            error: (error) => {
+                console.log('error desde form-user.component', error);
+            },
+        });
+    }
 }

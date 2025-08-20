@@ -7,7 +7,8 @@ import IUser from '../models/User';
 })
 export class UserService {
 
-    readonly API_URL: string = "https://jsonplaceholder.typicode.com/users";
+    // readonly API_URL: string = "https://jsonplaceholder.typicode.com/users";
+    readonly API_URL: string = "https://caae6476b5adba464dc0.free.beeceptor.com/api/users";
     
     users: any[]
     
@@ -22,7 +23,13 @@ export class UserService {
     getUser(id:number) {
         return this.http.get<any[]>(`${this.API_URL}/${id}`)
     }
-    
+    postUser(user: any) {
+        return this.http.post<any[]>(`${this.API_URL}`, user)
+    }
 
+    deleteUser(id: number) {
+        console.log('DELETING:', id);
+        return this.http.delete<any[]>(`${this.API_URL}/${id}`)
+    }
 
 }

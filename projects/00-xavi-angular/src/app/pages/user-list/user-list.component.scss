@@ -3,7 +3,7 @@
     justify-content: flex-start;
     gap: 20px;
     grid-template-columns: repeat(4,1fr);
-    padding: 1em;
+    padding: 1rem;
 
     .userCard {
         border:1px solid #c2c3c4;
@@ -14,7 +14,7 @@
             color:#727374;
         }
         button {
-            margin-top: 1em;
+            margin-top: 1rem;
         }
     }
 }

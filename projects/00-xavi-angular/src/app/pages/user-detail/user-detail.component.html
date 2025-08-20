@@ -1,8 +1,9 @@
+<div class="userContainer">
 @if (selectedUser) {
 
-    <div class="userContainer">
-        <div class="userCard">
+        <div class="userCard  USER_{{ selectedUser.id }}">
 
+            <p>{{ selectedUser.id }}</p>
             <img src="https://placedog.net/50/50" class="userImage" />
             <h6>{{ selectedUser.name }} <small>({{ selectedUser.username }})</small></h6>
 
@@ -12,18 +13,19 @@
 
             <div class="address">
                 <p>{{ selectedUser.address.street }}</p>
-                <p>{{ selectedUser.address.suite }}</p>
                 <p>{{ selectedUser.address.city }}</p>
-                <p>{{ selectedUser.address.zipcode }}</p>
+                <!-- <p>{{ selectedUser.address.zipcode }}</p>
                 <p>{{ selectedUser.address.geo.lat }}</p>
-                <p>{{ selectedUser.address.geo.lng }}</p>
+                <p>{{ selectedUser.address.geo.lng }}</p> -->
             </div>
 
-            <p>{{ selectedUser.company.name }}</p>
+            <!-- <p>{{ selectedUser.company.name }}</p>
             <p>{{ selectedUser.company.catchPhrase }}</p>
-            <p>{{ selectedUser.company.bs }}</p>
+            <p>{{ selectedUser.company.bs }}</p> -->
         </div>
 
-        <button [routerLink]="['/users']">Go back</button>
-    </div>
-}
+        <button [routerLink]="['/users']">Go back!</button>
+    } @else {
+        <h3 style="padding: 4em;">No existe el usuario</h3>
+    }
+</div>
