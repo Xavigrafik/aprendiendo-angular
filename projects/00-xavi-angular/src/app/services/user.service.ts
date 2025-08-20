@@ -10,8 +10,8 @@ import IUser from '../models/User';
 export class UserService {
     // readonly API_URL: string = "https://jsonplaceholder.typicode.com/users";
     // readonly API_URL: string ='https://caae6476b5adba464dc0.free.beeceptor.com/api/users';
-    readonly API_URL: string ='https://ca7b4ab987edfb8f232c.free.beeceptor.com/api/users/';
     // readonly API_URL: string ='https://ca0b567a69d2eab41123.free.beeceptor.com/api/users';
+    readonly API_URL: string ='https://ca7b4ab987edfb8f232c.free.beeceptor.com/api/users/';
 
     public users: any[] = [];
 
@@ -86,8 +86,19 @@ export class UserService {
         );
     }
 
-    postUser(user: any) {
-        return this.http.post<any[]>(`${this.API_URL}`, user);
+    postUser(user: any): Observable<any> {
+        return this.http.post<any>(this.API_URL, user)
+        .pipe(
+            // Usamos tap para refrescar la lista de usuarios después del post exitoso.
+            tap(() => {
+                console.log('Usuario creado exitosamente. Refrescando la lista...');
+                this.getUsers().subscribe();
+            }),
+            catchError(error => {
+                console.error("Error al crear el usuario:", error);
+                return of(null);
+            })
+        );
     }
 
     deleteUser(id: number) {
