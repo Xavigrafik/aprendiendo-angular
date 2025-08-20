@@ -1,3 +1,4 @@
+@use "sass:color";
 @import 'root.scss';
 @import 'normalize.scss';
 
@@ -60,14 +61,14 @@ button {
 
     &:hover {
         color: #fff;
-        background-color: darken($buttonColor, 10%);
-        border-color: darken($buttonColor, 15%);
+        background-color: color.scale($buttonColor, $lightness: -20%);
+        border-color: color.scale($buttonColor, $lightness: -15%);
     }
 
     &:active {
         color: #fff;
-        background-color: darken($buttonColor, 15%);
-        border-color: darken($buttonColor, 20%);
+        background-color: color.scale($buttonColor, $lightness: -15%);
+        border-color: color.scale($buttonColor, $lightness: -20%);
         box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     }
 
@@ -89,7 +90,7 @@ button {
         width: 38px;
         height: 38px;
         &:hover {
-            background-color: darken(#ff0000, 10%);
+            background-color: color.scale(#ff0000,  $lightness: -10%);
             color: #fff;
         }
     }

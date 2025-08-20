@@ -8,7 +8,8 @@ import IUser from '../models/User';
 export class UserService {
 
     // readonly API_URL: string = "https://jsonplaceholder.typicode.com/users";
-    readonly API_URL: string = "https://caae6476b5adba464dc0.free.beeceptor.com/api/users";
+    // readonly API_URL: string = "https://caae6476b5adba464dc0.free.beeceptor.com/api/users";
+    readonly API_URL: string = "https://ca0b567a69d2eab41123.free.beeceptor.com/api/users";
     
     users: any[]
     

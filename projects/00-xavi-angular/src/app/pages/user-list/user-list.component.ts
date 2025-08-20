@@ -45,11 +45,11 @@ export class UserListComponent implements OnInit {
     deleteUser(id: number) {
         this.userService.deleteUser(id).subscribe({
             next: (data) => {
-                console.log('data OK: ', data);
+                console.log('data OK 1: ', data);
                 this.getUsers();
             },
             error: (error) => {
-                console.log('error desde form-user.component', error);
+                console.log('error desde user-list.component', error);
             },
         });
     }

@@ -25,6 +25,7 @@
         </div>
 
         <button [routerLink]="['/users']">Go back!</button>
+        <button class="delete" (click)="deleteUser(selectedUser.id)" [routerLink]="['/users/:id']" > &times; </button>
     } @else {
         <h3 style="padding: 4em;">No existe el usuario</h3>
     }

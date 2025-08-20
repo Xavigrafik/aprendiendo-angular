@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class UserDetailComponent {
 
     selectedUser: any;
-    constructor(private route:ActivatedRoute, public userService:UserService) {}
+    constructor(private route:ActivatedRoute, public userService:UserService, private router: Router) {}
 
     ngOnInit(): void {
         const id = this.route.snapshot.params['id'];
@@ -43,5 +43,17 @@ export class UserDetailComponent {
             },
             
         })
+    }
+
+    deleteUser(id: number) {
+        this.userService.deleteUser(id).subscribe({
+            next: (data) => {
+                console.log('data OK 2: ', data);
+                 this.router.navigate(['/users']);
+            },
+            error: (error) => {
+                console.log('error desde user-detail.component', error);
+            },
+        });
     }
 }   

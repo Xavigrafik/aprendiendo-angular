@@ -1,5 +1,5 @@
 <div class="usersDeck">
-    @if(userService.users){
+    @if(userService.users  && userService.users.length > 0) {
 
         @for (user of userService.users; track user.id) {
             <div class="userCard USER_{{ user.id }}">

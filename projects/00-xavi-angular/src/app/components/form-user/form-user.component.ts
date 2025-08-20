@@ -15,7 +15,7 @@ import { UserService } from '../../services/user.service'; // Asegúrate de que 
 export class FormUserComponent implements OnInit {
     // Declara la propiedad del formulario, pero no la inicialices aquí.
     userForm!: FormGroup;
-
+    sentMsg = "";
     // Inyecta el servicio de usuario en el constructor.
     constructor(private userService: UserService) {}
 
@@ -48,13 +48,16 @@ export class FormUserComponent implements OnInit {
                 next: (data) => {
                     console.log('Datos enviados correctamente:', data);
                     // Opcional: recargar la lista de usuarios o navegar a otra página.
+                    this.sentMsg = "Enviado";
                     this.userService.getUsers();
                 },
                 error: (error) => {
-                     if (error.status == 429 ) {
+                    if (error.status == 429 ) {
                         console.log('Tas queado SIN REQUESTS... desde user-list.component', error);
+                        this.sentMsg = "Tas queado SIN REQUESTS a la API";
                     } else {
                         console.log('Error al enviar datos:', error);
+                        this.sentMsg = "Error al enviar datos";
                     }
                 },
             });
