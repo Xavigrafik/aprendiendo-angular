@@ -50,6 +50,8 @@ export class FormUserComponent implements OnInit {
                     // Opcional: recargar la lista de usuarios o navegar a otra página.
                     this.sentMsg = "Enviado";
                     this.userService.getUsers();
+                    this.resetForm();
+                    
                 },
                 error: (error) => {
                     if (error.status == 429 ) {
@@ -64,5 +66,11 @@ export class FormUserComponent implements OnInit {
         } else {
             console.log('El formulario no es válido.');
         }
+    }
+
+    resetForm() {
+        console.log('reseting form', this.userForm);
+        this.userForm.reset();
+        console.log('RESETED!');
     }
 }

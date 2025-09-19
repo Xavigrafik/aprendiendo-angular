@@ -8,10 +8,10 @@ import IUser from '../models/User';
     providedIn: 'root',
 })
 export class UserService {
-    // readonly API_URL: string = "https://jsonplaceholder.typicode.com/users";
+    readonly API_URL: string = "https://jsonplaceholder.typicode.com/users";
     // readonly API_URL: string ='https://caae6476b5adba464dc0.free.beeceptor.com/api/users';
     // readonly API_URL: string ='https://ca0b567a69d2eab41123.free.beeceptor.com/api/users';
-    readonly API_URL: string ='https://ca7b4ab987edfb8f232c.free.beeceptor.com/api/users/';
+    // readonly API_URL: string ='https://ca7b4ab987edfb8f232c.free.beeceptor.com/api/users/';
 
     public users: any[] = [];
 
@@ -29,7 +29,7 @@ export class UserService {
          this.getUsers().subscribe();
     }
 
-    // El método getUsers ahora contiene toda la lógica de manejo de errores.
+    // El método getUsers contiene toda la lógica de manejo de errores.
     getUsers(): Observable<any[]> {
         return this.http.get<any[]>(this.API_URL).pipe(
             // Almacena los datos en la propiedad 'users' si la llamada es exitosa.
@@ -93,6 +93,7 @@ export class UserService {
             tap(() => {
                 console.log('Usuario creado exitosamente. Refrescando la lista...');
                 this.getUsers().subscribe();
+
             }),
             catchError(error => {
                 console.error("Error al crear el usuario:", error);
@@ -101,9 +102,22 @@ export class UserService {
         );
     }
 
-    deleteUser(id: number) {
+    deleteUser(id: number):Observable<any> {
         console.log('DELETING:', id);
-        return this.http.delete<any[]>(`${this.API_URL}/${id}`);
+        return this.http.delete<any[]>(`${this.API_URL}/${id}`)
+            // TODO: REVISAR SI EL PIPE FUNCA
+        .pipe(
+            // Usamos tap para refrescar la lista de usuarios después del post exitoso.
+            tap(() => {
+                console.log('Usuario ELIMINADO. Refrescando la lista...');
+                this.getUsers().subscribe();
+
+            }),
+            catchError(error => {
+                console.error("Error al ELIMINAR el usuario:", error);
+                return of(null);
+            })
+        );
     }
 
     getTotalUsers() {
