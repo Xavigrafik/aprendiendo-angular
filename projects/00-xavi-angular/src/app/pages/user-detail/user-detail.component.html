@@ -22,10 +22,12 @@
             <!-- <p>{{ selectedUser.company.name }}</p>
             <p>{{ selectedUser.company.catchPhrase }}</p>
             <p>{{ selectedUser.company.bs }}</p> -->
+            
+            <div class="userCard__footer">
+                <button [routerLink]="['/users']">Go back!</button>
+                <button class="delete" (click)="deleteUser(selectedUser.id)" [routerLink]="['/users/:id']" > &times; </button>
+            </div>
         </div>
-
-        <button [routerLink]="['/users']">Go back!</button>
-        <button class="delete" (click)="deleteUser(selectedUser.id)" [routerLink]="['/users/:id']" > &times; </button>
     } @else {
         <button [routerLink]="['/users']">Go back!</button>
         <h3 style="padding: 4em;">No existe el usuario</h3>

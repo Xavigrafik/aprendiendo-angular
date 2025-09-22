@@ -4,14 +4,20 @@
     flex-direction: column;
 }
 
+%blockLayout {
+    border: 1px solid #c2c3c4;
+    background-color: #f2f3f4;
+    background-color: ed;
+    padding: 1em;
+    border-radius: 5px;
+    width: 500px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+
 .userCard {
-        border: 1px solid #c2c3c4;
-        background-color: #f2f3f4;
-        padding: 1em;
-        border-radius: 5px;
-        width: 500px;
-        margin: 2em auto;
-        text-align: center;
+       @extend %blockLayout;
 
         .userImage{
             margin: 20px auto;
@@ -26,5 +32,9 @@
             padding: 0.5em;
             border: 1px solid #b2b3b4;
             background: #fafafa;
+        }
+
+        &__footer{
+            margin-top: 2em;
         }
     }
