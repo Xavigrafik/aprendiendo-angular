@@ -1,7 +1,7 @@
 @use "sass:color";
-@import 'root.scss';
-@import 'normalize.scss';
-@import 'layout.scss';
+@use 'root.scss';
+@use 'normalize.scss';
+@use 'layout.scss';
 
 body {
     font-family: Arial, Helvetica, sans-serif;

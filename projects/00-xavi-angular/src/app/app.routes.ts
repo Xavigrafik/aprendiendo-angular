@@ -7,6 +7,7 @@ import { SignalsComponent } from './pages/signals-component/signals.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
+import { TypescriptPlaygroundComponent } from './typescript-playground/typescript-playground.component';
 
 export const routes: Routes = [
     { path: '',       component:HomeComponent },
@@ -15,7 +16,9 @@ export const routes: Routes = [
     
     { path: 'movies', component:MovieListComponent },
     { path: 'movies/:movieName', component:MovieDetailsComponent },
-    { path: 'form',   component:MovieFormPageComponent },
+    { path: 'form', component: MovieFormPageComponent },
+    
+    { path: 'typescriptPlayground',   component:TypescriptPlaygroundComponent },
     
     { path: 'users', component:UserListComponent },
     { path: 'users/:id', component:UserDetailComponent },
