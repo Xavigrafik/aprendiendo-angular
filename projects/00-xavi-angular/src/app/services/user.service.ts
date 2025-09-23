@@ -102,20 +102,13 @@ export class UserService {
         );
     }
 
-    deleteUser(id: number):Observable<any> {
+    deleteUser(id: number): Observable<any> {
         console.log('DELETING:', id);
-        return this.http.delete<any[]>(`${this.API_URL}/${id}`)
-            // TODO: REVISAR SI EL PIPE FUNCA
-        .pipe(
-            // Usamos tap para refrescar la lista de usuarios después del post exitoso.
-            tap(() => {
-                console.log('Usuario ELIMINADO. Refrescando la lista...');
-                this.getUsers().subscribe();
-
-            }),
+        return this.http.delete<any[]>(`${this.API_URL}/${id}`).pipe(
             catchError(error => {
                 console.error("Error al ELIMINAR el usuario:", error);
-                return of(null);
+                // Propagar el error para que el componente lo maneje
+                return throwError(() => new Error('Error al eliminar el usuario.'));
             })
         );
     }

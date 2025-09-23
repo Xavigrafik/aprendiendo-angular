@@ -1,7 +1,10 @@
+@import '../../../styles/layout.scss';
+
+
 .componenteApp{
-    border:1px solid lightseagreen;
-    padding: 1em;
-    background-color: rgba(69, 204, 245, 0.25);
+
+    @extend %componenteApp;
+
     h1 { 
         margin: 0;
     }

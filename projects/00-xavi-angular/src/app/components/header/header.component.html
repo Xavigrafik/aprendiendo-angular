@@ -3,22 +3,25 @@
         <!-- routerLinkActive="active" añadirá la clase 'active' a este <li>
              cuando la ruta actual sea exactamente '/'. -->
         <li >
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a>
         </li>
         <li>
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/cajon">Cajón</a>
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/cajon">Cajón</a>
         </li>
         <li>
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/movies">
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/signals">Signals</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/movies">
                 Movies
                 <div class="badge">{{getTotalMovies()}}</div>
             </a>
         </li>
         <li>
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/form">Forms</a>
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/form">Forms</a>
         </li>
         <li>
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/users">
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/users">
                 Users 
                 <div class="badge">{{getTotalUsers()}}</div>
             </a>

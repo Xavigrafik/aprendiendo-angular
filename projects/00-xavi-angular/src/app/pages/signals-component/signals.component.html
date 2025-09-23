@@ -1,0 +1,18 @@
+<div class="componenteApp">
+    
+    <p>SIGNALS</p>
+    
+    <p>{{name()}}</p>
+    <p>{{capitalizedName()}}</p>
+    <p>{{heroDescription()}}</p>
+    
+    <button (click)="changeAge()" >changeAge</button>
+    <button (click)="reset()" >reset</button>
+
+    
+    <p>PIPE</p>
+    <P>Permite mutar el valor de un signal sin modificar el valor icivial</P>
+    <p>{{name()|uppercase}} (pipe | uppercase)</p>
+
+
+</div>

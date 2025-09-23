@@ -1,0 +1,10 @@
+@import '../../../styles/layout.scss';
+
+
+.componenteApp {
+    
+    @extend %componenteApp;
+
+    min-height: calc(100vh - 58px);
+
+}
