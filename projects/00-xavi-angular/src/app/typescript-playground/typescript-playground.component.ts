@@ -1,6 +1,6 @@
 import { Component }        from '@angular/core';
-import { Usuario }          from '../../practicas-typescript/interfaces';
-import { Administrador, logCosas }    from '../../practicas-typescript/functions';
+import { Usuario, Product}          from '../../practicas-typescript/interfaces';
+import { Administrador, logCosas, taxCalculation }    from '../../practicas-typescript/functions';
 
 
 
@@ -22,6 +22,27 @@ export class TypescriptPlaygroundComponent {
 
     ngOnInit(): void {
         logCosas();
+
+
+        // taxCalculation ///////////////////////
+        const shoppingCart: Product[] = [
+            {
+                description: 'nokia',
+                price : 100
+            },
+            {
+                description: 'ipad',
+                price : 220
+            }
+        ]
+
+
+        const [total, totalEffective] = taxCalculation({
+            products: shoppingCart,
+            // tax: 0.333
+        });
+        console.log("taxCalculation total:" ,total,  totalEffective);
+        
 
         const admin: Administrador = new Administrador(1, 'Carlos', 'carlos@example.com');
         //admin.mostrarDatos();

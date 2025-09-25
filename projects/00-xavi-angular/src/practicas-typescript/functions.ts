@@ -1,4 +1,4 @@
-import { Usuario } from './interfaces';
+import { Usuario, TaxCalculationOptions,Audioplayer } from './interfaces';
 
 
 // Define una clase que implementa la interfaz
@@ -20,18 +20,6 @@ export class Administrador implements Usuario {
     }
 }
 
-interface Audioplayer {
-    audioVolume: number;
-    songDuration: number;
-    song: string;
-    details: Details;
-}
-
-interface Details {
-    author: string;
-    year: number;
-}
-
 
 const audioPlayer: Audioplayer = {
     audioVolume: 90,
@@ -50,6 +38,22 @@ const {
 } = audioPlayer;
 
 const { author } = details;
+
+
+export function taxCalculation(options:TaxCalculationOptions): [number, number] {
+    
+    const { tax, products } = options;
+    let total = 0;
+
+    products.forEach(({price}) => {
+        total += price;
+    });
+    const effectiveTax = tax ?? 0.15;
+    console.log("taxCalculation():" , total, tax ? (`Tax: ${tax}`) : (`Fallback tax: ${effectiveTax}`));
+
+    return [total, total * effectiveTax]
+
+}
 
 
 export function logCosas(): void {
