@@ -4,7 +4,13 @@
         <div class="userCard  USER_{{ selectedUser.id }}">
 
             <p>{{ selectedUser.id }}</p>
-            <img src="https://placedog.net/50/50" class="userImage" />
+            <img
+                src="https://placedog.net/50/50" 
+                class="userImage"
+                onerror="this.onerror=null; this.src='assets/imgs/img-not-found.png';" 
+
+            />
+            <h3>EEOO__13</h3>
             <h6>{{ selectedUser.name }} <small>({{ selectedUser.username }})</small></h6>
 
             <p class="email">{{ selectedUser.email }}</p>

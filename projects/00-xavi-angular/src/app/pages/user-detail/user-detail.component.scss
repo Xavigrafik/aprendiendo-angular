@@ -1,23 +1,21 @@
+@use "../../../styles/layout.scss";
+
 .userContainer {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-%blockLayout {
-    border: 1px solid #c2c3c4;
-    background-color: #f2f3f4;
-    background-color: ed;
-    padding: 1em;
-    border-radius: 5px;
-    width: 500px;
-    margin: 2em auto;
-    text-align: center;
-}
-
 
 .userCard {
-       @extend %blockLayout;
+        border: 1px solid #000;
+        border: 1px solid #c2c3c4;
+        background-color: #f2f3f4;
+        padding: 1em;
+        border-radius: 5px;
+        width: 500px;
+        margin: 2em auto;
+        text-align: center;
 
         .userImage{
             margin: 20px auto;
@@ -36,5 +34,8 @@
 
         &__footer{
             margin-top: 2em;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
         }
     }

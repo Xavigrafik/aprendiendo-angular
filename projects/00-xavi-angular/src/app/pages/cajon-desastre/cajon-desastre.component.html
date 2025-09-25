@@ -4,11 +4,11 @@
 
     <p>{{variableCustom}} -  {{title}}</p>
     
-    {{ isTrue ? "var is true" : "var not true!!" }}
-
-    @if (isTrue) {
-        <p> Pintado condicional: <strong>{{isTrue}}</strong></p>
-    }
+    <p>
+    {{ isTrue ? "var is true" : "var not true!!" }} {{" "}}
+    @if (isTrue) {<span>Pintado condicional: <strong>{{isTrue}}</strong></span>}
+    @else {<span>No pintado condicional: <strong>{{isTrue}}</strong></span>}
+    </p>
 
     <hr>
     <p style="margin: 0;">PINTANDO variables como atributo HTML</p>
@@ -33,11 +33,12 @@
         }
     </div>
     <hr>
-
-    <p>addOne: {{number}}</p>
-    <button (click)="addOne()">Add {{number}}</button>
-    <button (click)="resetNum()">Reset</button>
-    <button (click)="toggleBoolean()">Toggle Boolean</button>
+    <section class="flexBlock">
+        <p>addOne: {{number}}</p>
+        <button (click)="addOne()">Add {{number}}</button>
+        <button (click)="resetNum()">Reset</button>
+        <button (click)="toggleBoolean()">Toggle Boolean</button>
+    </section>
 
     <hr>
 

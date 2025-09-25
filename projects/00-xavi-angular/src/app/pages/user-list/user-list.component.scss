@@ -1,3 +1,4 @@
+
 .usersDeck {
     display: grid;
     justify-content: flex-start;
@@ -13,8 +14,16 @@
         .email {
             color:#727374;
         }
-        button {
-            margin-top: 1rem;
+        
+        &__footer{
+            margin-top: 2em;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+
+            button {
+                margin-top: 1rem;
+            }
         }
     }
 }

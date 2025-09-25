@@ -8,7 +8,8 @@
     form{
         padding: 1em;
         background-color: #fff;
-        width: 500px;
+        width: 100%;
+        max-width: 500px;
 
         input.ng-invalid.ng-touched {
             border: 2px solid #dc3545;

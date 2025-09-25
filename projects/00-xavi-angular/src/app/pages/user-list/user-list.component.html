@@ -1,14 +1,17 @@
 <div class="usersDeck">
+
     @if(userService.users  && userService.users.length > 0) {
 
         @for (user of userService.users; track user.id) {
             <div class="userCard USER_{{ user.id }}">
                 <p class="id">{{ user.id }}</p>
-                <img src="https://placedog.net/50/50" class="img-fluid" />
+                <!-- <img src="https://placedog.net/50/50" class="img-fluid" /> -->
                 <h6> {{ user.name }} <small>({{ user.username }})</small> </h6>
                 <p class="email">{{ user.email }}</p>
-                <button [routerLink]="['/users/' +  user.id]">Ver</button>
-                <button class="delete" (click)="deleteUser(user.id)" [routerLink]="['/users/']" > &times; </button>
+                <div class="userCard__footer">
+                    <button [routerLink]="['/users/' +  user.id]">Ver</button>
+                    <button class="delete" (click)="deleteUser(user.id)" [routerLink]="['/users/']" > &times; </button>
+                </div>
             </div>
         }
 

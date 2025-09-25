@@ -9,6 +9,18 @@
         margin: 0;
     }
 
+    .flexBlock {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+        & > * {
+            
+        }
+    }
+
     .mensajeBlock {
         padding: 1rem;
         border: 1px solid lightseagreen;
