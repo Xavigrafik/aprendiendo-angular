@@ -21,6 +21,8 @@ export class TypescriptPlaygroundComponent {
     }
 
     ngOnInit(): void {
+        console.log('------------------ START typescript-playground.component ---------------------');
+
         logCosas();
 
 

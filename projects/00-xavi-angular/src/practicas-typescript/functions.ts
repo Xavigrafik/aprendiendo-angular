@@ -56,8 +56,15 @@ export function taxCalculation(options:TaxCalculationOptions): [number, number] 
 }
 
 
+///// ARRAY DESTRUCTURING
+const dbz: string[] = ["Goku", "Gohan", "Trunks"];
+const [p1, p2, trunks]:string[] = dbz;
+
+
+
 export function logCosas(): void {
     console.log('>>>>>>>>>>>>>>>>>>>>>>> logCosas ');
+    console.log(p1, p2, trunks);
     console.log('Song: ', audioPlayer.song);
     console.log('Song destructured: ', song);
     console.log('Autor destructured OK: ', author);
@@ -65,9 +72,5 @@ export function logCosas(): void {
 }
 
 
-///// ARRAY DESTRUCTURING
-const dbz: string[] = ["Goku", "Gohan", "Trunks"];
-const [p1, p2, trunks]:string[] = dbz;
-console.log(p1, p2, trunks);
 
 
